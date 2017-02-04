@@ -1,0 +1,48 @@
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<link href ="style.css" rel = "stylesheet">
+	<title>Test</title>
+</head>
+<body onload ="medalView()">
+	<p>スロットゲーム(仮)</p>
+	<table border="5" rules="groups" id="playZone">
+		<colgroup>
+		<colgroup>
+		<colgroup>
+		<tr>
+			<td><img src ="src/bell.png" id ="leftTop"></td>
+			<td><img src ="src/bell.png" id ="centerTop"></td>
+			<td><img src ="src/bell.png" id ="rightTop"></td>
+		</tr>
+		<tr>
+			<td><img src ="src/7.png" id ="left"></td>
+			<td><img src ="src/7.png" id ="center"></td>
+			<td><img src ="src/7.png" id ="right"></td>
+		</tr>
+		<tr>
+			<td><img src ="src/cherry.png" id ="leftBottom"></td>
+			<td><img src ="src/cherry.png" id ="centerBottom"></td>
+			<td><img src ="src/cherry.png" id ="rightBottom"></td>
+		</tr>
+	</table>
+
+	<span class= "buttons">
+		<button id="button1" onclick ="flgl=1,lineChecker()"></button>
+		<button id="button2" onclick ="flgc=1,lineChecker()"></button>
+		<button id="button3" onclick ="flgr=1,lineChecker()"></button>
+	</span>
+
+	<button id ="start" onclick ="gameStart()">MAX BET</button>
+	<span class="medal">
+		<p>CREDIT</p>
+		<span id ="medals"></span>
+	</span>
+
+	<span class="payout">
+		<p>PAY OUT</p>
+		<span id ="payouts"></span>
+	</span>
+	<script type ="text/javascript" src ="main.js"></script>
+</body>
+</html>
