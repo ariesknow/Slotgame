@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Slotgame
 Slot moves on browser
 
