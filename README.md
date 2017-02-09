@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 =======
 # Slotgame
 Slot moves on browser
@@ -16,4 +20,4 @@ wm wm wm → 15coins
 cherry cherry cherry → 8coins
 
 REP REP REP → replay
->>>>>>> 827677eebda1bf3d94f52f29012c303a9b96595e
+
