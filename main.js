@@ -149,6 +149,11 @@ function totalPayoutView(){		//累計獲得メダルを表示
 	document.getElementById("totalPayouts").textContent= localStorage.totalMedal;
 }
 
+function totalPayoutReset(){
+	localStorage.clear();
+	document.location="index.html"
+}
+
 function lineChecker(){
 	if(flgr==1 && flgl==1 && flgc==1){
 		LTChecker();
@@ -157,7 +162,8 @@ function lineChecker(){
 	}
 }
 
-function medalMove(){		//payout→creditへのメダル移動
+function medalMove(){	//payout→creditへのメダル移動
+	localStorage.totalMedal= String(totalPayoutCount);
 	if(payoutCount==0) return;
 		payoutCount--;
 		payoutView();
@@ -181,12 +187,12 @@ function LTChecker(){		//左下からの揃い判定
 			if((checkCT==10 && checkRT==4) || (checkCC==10 && checkRB==4)){
 				payoutCount=300;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			} 
 			else{
 				payoutCount=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 4:
@@ -195,12 +201,12 @@ function LTChecker(){		//左下からの揃い判定
 			if(((checkCT==0 || checkCT==5) && checkRT==5) || ((checkCC==0 || checkCC==5) && checkRB==5)){
 				payoutCount=100;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 0:
@@ -208,12 +214,12 @@ function LTChecker(){		//左下からの揃い判定
 			if(((checkCT==2 || checkCT==7 || checkCT==13) && (checkRT==3 || checkRT==6 || checkRT==10 || checkRT==14)) || ((checkCC==2 || checkCC==7 || checkCC==13) && (checkRB==3 || checkRB==6 || checkRB==10 || checkRB==14))){
 				payoutCount=15;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 1:
@@ -221,12 +227,12 @@ function LTChecker(){		//左下からの揃い判定
 			if(((checkCT==3 || checkCT==9 || checkCT==14) && (checkRT==0 || checkRT==2 || checkRT==9 || checkRT==13)) || ((checkCC==3 || checkCC==9 || checkCC==14) && (checkRB==0 || checkRB==2 || checkRB==9 || checkRB==13))){
 				payoutCount=15;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 3:
@@ -235,12 +241,12 @@ function LTChecker(){		//左下からの揃い判定
 			if(((checkCT==1 || checkCT==4 || checkCT==8 || checkCT==12) && (checkRT==1 || checkRT==8 || checkRT==12)) || ((checkCC==1 || checkCC==4 || checkCC==8 || checkCC==12) && (checkRB==1 || checkRB==8 || checkRB==12))){
 				payoutCount=8;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 6:
@@ -260,12 +266,12 @@ function LCChecker(){		//左中からの揃い判定
 			if((checkCC==10 || checkCC==4) && (checkRC==10 || checkRC==4)){
 				payoutCount+=300;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount+=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 4:
@@ -274,12 +280,12 @@ function LCChecker(){		//左中からの揃い判定
 			if((checkCC==0 || checkCC==5) && checkRC==5){
 				payoutCount+=100;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount+=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 0:
@@ -287,12 +293,12 @@ function LCChecker(){		//左中からの揃い判定
 			if((checkCC==2 || checkCC==7 || checkCC==13) && (checkRC==3 || checkRC==6 || checkRC==10 || checkRC==14)){
 				payoutCount+=15;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount+=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 1:
@@ -300,12 +306,12 @@ function LCChecker(){		//左中からの揃い判定
 			if((checkCC==3 || checkCC==9 || checkCC==14) && (checkRC==0 || checkRC==2 || checkRC==9 || checkRC==13)){
 				payoutCount+=15;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount+=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 3:
@@ -314,12 +320,12 @@ function LCChecker(){		//左中からの揃い判定
 			if((checkCC==1 || checkCC==4 || checkCC==8 || checkCC==12) && (checkRC==1 || checkRC==8 || checkRC==12)){
 				payoutCount+=8;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount+=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 6:
@@ -339,12 +345,11 @@ function LBChecker(){		//左上からの揃い判定
 			if((checkCB==10 && checkRB==4) || (checkCC==10 && checkRT==4)){
 				payoutCount+=300;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			} 
 			else{
 				payoutCount+=0;
-				payoutView();
 			}
 			break;
 		case 4:
@@ -353,12 +358,12 @@ function LBChecker(){		//左上からの揃い判定
 			if(((checkCB==0 || checkCB==5) && checkRB==5) || ((checkCC==0 || checkCC==5) && checkRT==5)){
 				payoutCount+=100;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount+=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 0:
@@ -366,12 +371,12 @@ function LBChecker(){		//左上からの揃い判定
 			if(((checkCB==2 || checkCB==7 || checkCB==13) && (checkRB==3 || checkRB==6 || checkRB==10 || checkRB==14)) || ((checkCC==2 || checkCC==7 || checkCC==13) && (checkRT==3 || checkRT==6 || checkRT==10 || checkRT==14))){
 				payoutCount+=15;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
 			}
 			else{
 				payoutCount+=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 1:
@@ -379,13 +384,13 @@ function LBChecker(){		//左上からの揃い判定
 			if(((checkCB==3 || checkCB==9 || checkCB==14) && (checkRB==0 || checkRB==2 || checkRB==9 || checkRB==13)) || ((checkCC==3 || checkCC==9 || checkCC==14) && (checkRT==0 || checkRT==2 || checkRT==9 || checkRT==13))){
 				payoutCount+=15;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
  
 			}
 			else{
 				payoutCount+=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 3:
@@ -394,13 +399,13 @@ function LBChecker(){		//左上からの揃い判定
 			if(((checkCB==1 || checkCB==4 || checkCB==8 || checkCB==12) && (checkRB==1 || checkRB==8 || checkRB==12)) || ((checkCC==1 || checkCC==4 || checkCC==8 || checkCC==12) && (checkRT==1 || checkRT==8 || checkRT==12))){
 				payoutCount+=8;
 				medalFlowView();
-				medalView();
-				payoutView();
+				// medalView();
+				// payoutView();
  
 			}
 			else{
 				payoutCount+=0;
-				payoutView();
+				medalFlowView();
 			}
 			break;
 		case 6:
